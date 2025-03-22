@@ -1,0 +1,12 @@
+{% extends 'blog/base.html' %}
+
+{% block title %}Mi Perfil{% endblock %}
+
+{% block content %}
+    <h1>Bienvenido, {{ user.username }}</h1>
+    <p><strong>Email:</strong> {{ user.email }}</p>
+    <p><strong>Nombre Completo:</strong> {{ user.first_name }} {{ user.last_name }}</p>
+    <p><a href="{% url 'update_profile' %}">Actualizar mi perfil</a></p>
+{% endblock %}
+
+{% load static %}
