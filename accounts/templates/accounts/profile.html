@@ -1,4 +1,5 @@
 {% extends 'blog/base.html' %}
+{% load static %}  
 
 {% block title %}Mi Perfil{% endblock %}
 
@@ -6,7 +7,12 @@
     <h1>Bienvenido, {{ user.username }}</h1>
     <p><strong>Email:</strong> {{ user.email }}</p>
     <p><strong>Nombre Completo:</strong> {{ user.first_name }} {{ user.last_name }}</p>
+
+    {% if user.profile.avatar %}
+        <img src="{{ user.profile.avatar.url }}" alt="Avatar de {{ user.username }}" width="150">
+    {% else %}
+        <p>No tienes avatar.</p>
+    {% endif %}
+
     <p><a href="{% url 'update_profile' %}">Actualizar mi perfil</a></p>
 {% endblock %}
-
-{% load static %}

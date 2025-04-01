@@ -3,30 +3,28 @@ from .models import Message, Post
 from .forms import MessageForm, PostForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import UserChangeForm
+from django.shortcuts import render, redirect
 from django.shortcuts import render
+from .forms import ProfileUpdateForm
 
 def about(request):
     return render(request, 'blog/about.html')
 
-# Vista para actualizar el perfil del usuario
 @login_required
 def update_profile(request):
     if request.method == 'POST':
-        form = UserChangeForm(request.POST, instance=request.user)
+        form = ProfileUpdateForm(request.POST, request.FILES, instance=request.user.profile)
         if form.is_valid():
             form.save()
-            return redirect('profile')  # Redirigir a la vista del perfil
+            return redirect('profile')  
     else:
-        form = UserChangeForm(instance=request.user)
+        form = ProfileUpdateForm(instance=request.user.profile)
 
-    return render(request, 'blog/update_profile.html', {'form': form})
+    return render(request, 'accounts/update_profile.html', {'form': form})
 
-# Vista para ver el perfil del usuario
-@login_required
 def profile(request):
-    return render(request, 'blog/profile.html')
+    return render(request, 'accounts/profile.html')
 
-# Vista para la página de inicio
 @login_required
 def home(request):
     posts = Post.objects.all()  # Obtiene todas las publicaciones
