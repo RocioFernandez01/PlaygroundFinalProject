@@ -1,0 +1,18 @@
+{% extends 'base_generic.html' %}
+
+{% block content %}
+  <h1>Lista de Posts</h1>
+
+  {% for post in posts %}
+    <div class="post">
+      <h2>{{ post.title }}</h2>
+      <p>{{ post.content }}</p>
+            <p><a href="{% url 'post_detail' post.id %}">Ver más</a></p>
+            
+            <!-- Botones de editar y eliminar -->
+            <p>
+                <button><a href="{% url 'edit_post' post.id %}">Editar</a></button>
+                <button><a href="{% url 'delete_post' post.id %}">Eliminar</a></button>
+        </div>
+    {% endfor %}
+{% endblock %}

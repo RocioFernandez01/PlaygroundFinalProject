@@ -32,7 +32,8 @@ def profile(request):
     """
     Vista para mostrar el perfil del usuario.
     """
-    return render(request, 'accounts/profile.html')  # Asegúrate de que la plantilla sea la correcta
+    profile = request.user.profile  # Obtén el perfil del usuario autenticado
+    return render(request, 'accounts/profile.html', {'profile': profile})  # Pasa el perfil a la plantilla
 
 def logout_view(request):
     """
@@ -50,7 +51,7 @@ def register(request):
         if form.is_valid():
             user = form.save()
             login(request, user)
-            return redirect("home")
+            return redirect("home")  # Redirige al home después de iniciar sesión
     else:
         form = UserCreationForm()
 

@@ -1,0 +1,53 @@
+/* static/css/styles.css */
+
+/* Cambiar el fondo de la página y el color de texto */
+body {
+    background-color: #766ee4; /* Color de fondo claro */
+    font-family: 'Nunito', sans-serif;
+    color: #333; /* Color de texto */
+}
+
+/* Personalizar el título */
+h1 {
+    color: #766ee4 ; / 
+    text-align: center;
+    font-size: 2.5em;
+    margin-top: 20px;
+}
+
+/* Estilo para los enlaces */
+a {
+    color: #2A3D66 ; /* Azul para los enlaces */
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline; /* Subrayado al pasar el ratón */
+}
+
+/* Estilo para los botones */
+button {
+    background-color: #2A3D66; /* Color verde */
+    color: rgb(57, 179, 212);
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #9B7AD6; /* Color más oscuro al pasar el ratón */
+}
+
+/* Estilo para los contenedores de mensajes */
+div {
+    border: 1px solid #8A66D9;
+    border-radius: 8px;
+    padding: 10px;
+    margin: 10px 0;
+    background-color: #F3E6FB; /* Fondo blanco para los mensajes */
+}
+
+/* Estilo para los encabezados de los mensajes */
+h3 {
+    color: #41259a;
+}

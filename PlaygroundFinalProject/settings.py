@@ -1,3 +1,4 @@
+import dj_database_url
 """
 Django settings for PlaygroundFinalProject project.
 
@@ -77,15 +78,9 @@ if DEBUG:
     }
 else:
     DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.postgresql',
-            'NAME': 'mi_base_de_datos',
-            'USER': 'mi_usuario',
-            'PASSWORD': 'mi_contraseña',
-            'HOST': 'localhost',
-            'PORT': '5432',
-        }
+        'default': dj_database_url.config(default=os.getenv('DATABASE_URL'))
     }
+
 
 
 # Password validation settings
