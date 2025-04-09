@@ -1,0 +1,17 @@
+user_profile
+
+{% extends "base.html" %}
+
+{% block content %}
+  <h2>Perfil de {{ user.username }}</h2>
+  <p>Nombre: {{ user.first_name }} {{ user.last_name }}</p>
+  <p>Email: {{ user.email }}</p>
+
+  {% if user.profile.avatar %}
+    <img src="{{ user.profile.avatar.url }}" alt="Avatar de {{ user.username }}" width="150">
+  {% endif %}
+
+  {% if user == request.user %}
+    <a href="{% url 'update_profile' %}">Editar mi perfil</a>
+  {% endif %}
+{% endblock %}

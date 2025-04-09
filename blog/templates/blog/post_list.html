@@ -1,18 +1,30 @@
-{% extends 'base_generic.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Posts</title>
+</head>
+<body>
 
-{% block content %}
-  <h1>Lista de Posts</h1>
+    <h1>Publicaciones</h1>
 
-  {% for post in posts %}
-    <div class="post">
-      <h2>{{ post.title }}</h2>
-      <p>{{ post.content }}</p>
-            <p><a href="{% url 'post_detail' post.id %}">Ver más</a></p>
-            
-            <!-- Botones de editar y eliminar -->
-            <p>
-                <button><a href="{% url 'edit_post' post.id %}">Editar</a></button>
-                <button><a href="{% url 'delete_post' post.id %}">Eliminar</a></button>
+    {% for post in posts %}
+        <div>
+            <h2>{{ post.title }}</h2>
+            <p>Post ID: {{ post.pk }}</p> <!-- Se agregó para depuración -->
+            <p>Por <a href="{% url 'profile' post.author.username %}">{{ post.author.username }}</a></p>
+            <p>{{ post.content|truncatewords:50 }}</p>
+
+            {% if post.image %}
+                <img src="{{ post.image.url }}" alt="Imagen del post">
+            {% endif %}
+
+            <p><a href="{{ post.get_absolute_url }}">Leer más</a></p>
+
         </div>
     {% endfor %}
-{% endblock %}
+
+</body>
+</html>

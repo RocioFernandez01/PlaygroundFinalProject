@@ -1,10 +1,18 @@
-{% load static %}
-<h1>Mensajes recibidos</h1>
-{% for message in messages %}
-    <div>
-        <p><strong>{{ message.sender.username }}</strong> escribió:</p>
-        <p>{{ message.content }}</p>
-        <p><small>Enviado el {{ message.created_at }}</small></p>
-        <p><a href="#">Marcar como leído</a></p>
-    </div>
-{% endfor %}
+{% extends "base.html" %}
+
+{% block content %}
+    <h2>Mensajes</h2>
+    {% if messages %}
+        <ul>
+            {% for message in messages %}
+                <li>
+                    <strong>De:</strong> {{ message.sender.username }}<br>
+                    <strong>Mensaje:</strong> {{ message.content }}<br>
+                    <strong>Fecha:</strong> {{ message.timestamp }}
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No tienes mensajes.</p>
+    {% endif %}
+{% endblock %}

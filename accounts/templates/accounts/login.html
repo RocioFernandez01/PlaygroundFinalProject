@@ -1,12 +1,6 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Iniciar sesión</title>
-</head>
-<body>
+{% extends "blog/base.html" %}
 
+{% block content %}
     <h2>Iniciar sesión</h2>
 
     {% if messages %}
@@ -29,7 +23,5 @@
     </form>
 
     <p>¿No tienes una cuenta? <a href="{% url 'register' %}">Regístrate aquí</a></p>
-    <p><a href="{% url 'home' %}">Volver al inicio</a></p>
+{% endblock %}
 
-</body>
-</html>

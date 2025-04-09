@@ -1,0 +1,63 @@
+* [33mcommit a5b315c1ba69a8ddfdfc95744afa8303108b08bf[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+[31m|[m Author:     RocioFernandez01 <rociobf2001@outlook.com>
+[31m|[m AuthorDate: Wed Apr 2 03:03:33 2025
+[31m|[m Commit:     RocioFernandez01 <rociobf2001@outlook.com>
+[31m|[m CommitDate: Wed Apr 2 03:03:33 2025
+[31m|[m 
+[31m|[m     Entrega final del proyecto
+[31m|[m 
+* [33mcommit 2202efd0278b67e96b0f375cc0b4544ae429f7a6[m
+[31m|[m Author:     RocioFernandez01 <rociobf2001@outlook.com>
+[31m|[m AuthorDate: Tue Apr 1 23:37:45 2025
+[31m|[m Commit:     RocioFernandez01 <rociobf2001@outlook.com>
+[31m|[m CommitDate: Tue Apr 1 23:37:45 2025
+[31m|[m 
+[31m|[m     Fix: Implementación de update_profile
+[31m|[m 
+* [33mcommit bc827bdaf3dd85dea82cb390a945c2d1e21cc3c3[m
+[31m|[m Author:     RocioFernandez01 <rociobf2001@outlook.com>
+[31m|[m AuthorDate: Mon Mar 24 14:47:31 2025
+[31m|[m Commit:     RocioFernandez01 <rociobf2001@outlook.com>
+[31m|[m CommitDate: Mon Mar 24 14:47:31 2025
+[31m|[m 
+[31m|[m     Preparando para despliegue en Railway
+[31m|[m 
+* [33mcommit 7ec81a95951ea5f750b53f82303d2c6d90a9cef2[m
+[31m|[m Author:     RocioFernandez01 <rociobf2001@outlook.com>
+[31m|[m AuthorDate: Mon Mar 24 14:36:32 2025
+[31m|[m Commit:     RocioFernandez01 <rociobf2001@outlook.com>
+[31m|[m CommitDate: Mon Mar 24 14:36:32 2025
+[31m|[m 
+[31m|[m     Agregar archivo .gitignore
+[31m|[m 
+* [33mcommit 2be171dfe636d1256c113b455b7ea4902b07189e[m
+[31m|[m Author:     RocioFernandez01 <rociobf2001@outlook.com>
+[31m|[m AuthorDate: Mon Mar 24 13:37:19 2025
+[31m|[m Commit:     RocioFernandez01 <rociobf2001@outlook.com>
+[31m|[m CommitDate: Mon Mar 24 13:37:19 2025
+[31m|[m 
+[31m|[m     Añadido Procfile para deploy en Railway
+[31m|[m 
+* [33mcommit c61aa9e5fb69e8e21feda84cf92ad6ea223deb46[m
+[31m|[m Author:     RocioFernandez01 <rociobf2001@outlook.com>
+[31m|[m AuthorDate: Mon Mar 24 13:26:00 2025
+[31m|[m Commit:     RocioFernandez01 <rociobf2001@outlook.com>
+[31m|[m CommitDate: Mon Mar 24 13:26:00 2025
+[31m|[m 
+[31m|[m     Preparando para deployment
+[31m|[m 
+* [33mcommit f1de5876fd0afe7b14cd15e1611de25c363dc724[m
+[31m|[m Author:     RocioFernandez01 <rociobf2001@outlook.com>
+[31m|[m AuthorDate: Sat Mar 22 08:16:17 2025
+[31m|[m Commit:     RocioFernandez01 <rociobf2001@outlook.com>
+[31m|[m CommitDate: Sat Mar 22 08:16:17 2025
+[31m|[m 
+[31m|[m     Subiendo proyecto con .gitignore y excluyendo archivos no deseados
+[31m|[m 
+* [33mcommit 89b509f12313c7c9afb393a297f1d57c030729bc[m
+  Author:     RocioFernandez01 <rociobf2001@outlook.com>
+  AuthorDate: Fri Mar 21 14:20:47 2025
+  Commit:     GitHub <noreply@github.com>
+  CommitDate: Fri Mar 21 14:20:47 2025
+  
+      Initial commit

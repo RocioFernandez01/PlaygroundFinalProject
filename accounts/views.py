@@ -4,6 +4,30 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import UserCreationForm
 from .forms import UserUpdateForm, ProfileUpdateForm
 from .models import Profile
+from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
+from django.contrib.auth.models import User
+
+def profile_view(request, username):
+    user = get_object_or_404(User, username=username)
+    return render(request, 'accounts/profile.html', {'user': user})
+
+@login_required
+def user_profile(request):
+    return render(request, 'accounts/profile.html')
+
+
+def register_view(request):
+    if request.method == 'POST':
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            user = form.save()
+            login(request, user)
+            return redirect('home')  # Ajusta según tu configuración de URLs
+    else:
+        form = UserCreationForm()
+    
+    return render(request, 'accounts/register.html', {'form': form})
 
 @login_required
 def update_profile(request):
@@ -51,7 +75,7 @@ def register(request):
         if form.is_valid():
             user = form.save()
             login(request, user)
-            return redirect("home")  # Redirige al home después de iniciar sesión
+            return redirect("home")  
     else:
         form = UserCreationForm()
 

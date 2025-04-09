@@ -1,18 +1,22 @@
+{% extends 'base.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ post.title }}</title>
-</head>
-<body>
 
+{% block content %}
     <h1>{{ post.title }}</h1>
-    <p>Por {{ post.author.username }}</p>
-    <p>{{ post.content }}</p>  
+    <p>Por <a href="{% url 'profile' post.author.username %}">{{ post.author.username }}</a></p>
+    
+    {% if post.image %}
+        <img src="{{ post.image.url }}" alt="Imagen del post">
+    {% endif %}
+
+    <p>{{ post.content|safe }}</p>  
+
+    {% if user.is_authenticated and user == post.author %}
+        <a href="{% url 'edit_post' post.pk %}">Editar</a>
+        <a href="{% url 'delete_post' post.pk %}">Eliminar</a>
+    {% endif %}
 
     <p><a href="{% url 'home' %}">Volver al inicio</a></p>
 
-</body>
-</html>
+{% endblock %}
+
